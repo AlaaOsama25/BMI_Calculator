@@ -12,13 +12,15 @@ class MyApp extends StatelessWidget {
       title: 'BMI calculator',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.black,
+        primarySwatch: Colors.pink
       ),
       home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 int _Height = 178;
-int _Weight = 90;
+int _Weight = 70;
 int _Age = 26;
 bool _Color= false;
 bool _Color2 = false;
@@ -387,25 +389,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 _Calculation(_Height, _Weight);
               });
             },
-            child: Container(
-                child: Center( child :(
-                    Text('CALCULATE',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  child: Center( child :(
+                      Text('CALCULATE',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
 
-                      ),)
-                ),
-                ),
-                height: 75,
-                width: double.infinity,
-                margin: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.pink,
-                  borderRadius: BorderRadius.circular(10),
-                )
+                        ),)
+                  ),
+                  ),
+                  height: 75,
+                  width: double.infinity,
+                  margin: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.circular(30),
+                  )
 
+              ),
             ),
           )
         ]));
@@ -447,10 +452,10 @@ class _MySecondPageState extends StatelessWidget {
                               color: Colors.green,
                             )
                         ),
-                        SizedBox(height: 10,),
+                        //SizedBox(height: 10,),
                         Text('${_Result.toStringAsFixed(2)}',
                             style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 50,
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
                             )),
@@ -481,21 +486,24 @@ class _MySecondPageState extends StatelessWidget {
             onTap: (){
               Navigator.pop(context);
             },
-            child: Container(
-                child: Center( child :(
-                    Text('RECALCULATE',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),)),),
-                height: 75,
-                width: double.infinity,
-                margin: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.pink,
-                  borderRadius: BorderRadius.circular(10),
-                )
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  child: Center( child :(
+                      Text('RECALCULATE',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),)),),
+                  height: 75,
+                  width: double.infinity,
+                  margin: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.circular(30),
+                  )
+              ),
             ),
           )
         ],
